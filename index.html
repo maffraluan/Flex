@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>Rede Credenciada FlexFrota</title>
+        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <style>
+            html, body { margin:0 auto; height: 100%;}
+            .um { background: #333; color: white; padding: 50px 20px; 
+              height: 100%;                        /* para falta de suporte */  
+              height: -webkit-calc(100% - 100px);  /* para Chrome */
+              height: -moz-calc(100% - 100px);     /* para Firefox */
+              height: calc(100% - 100px);          /* para suporte nativo */
+             }
+            h1 { margin:0;}
+            </style>
+    </head>
+    <body>
+            
+    <div id="mapa" style="width: 100%; height: 100%"></div>
+    <div id="select" style="position: absolute; /* posição absoluta ao elemento pai, neste caso o BODY */
+        /* Posiciona no meio, tanto em relação a esquerda como ao topo */
+        left: 1%; 
+        top: 100px;
+        width: 500px; /* Largura da DIV */
+        height: 25px;
+        margin-left: 1px;
+        margin-top: 1px;    
+        background-color: rgba(5, 109, 78, 0.404);
+        color: rgb(255, 255, 255);
+        border-radius: 15px;
+        z-index: 1000; /* Faz com que fique sobre todos os elementos da página */">
+        <div class="div-select" style="margin:0 auto; width: 100%; margin-bottom: 5px;">
+            <select id="selectbox" name="selectbox">
+                <option value="">Selecione a Opção</option>
+                <option value="rotas">Traçar uma Rota</option>
+                <option value="buscar">Buscar um Estabelecimento</option>
+                <option value="baixar">Baixar nossa Rede</option>
+            </select>
+        </div>
+</div>
+    <div id="pai">
+
+        <div id="rotas" class="formulario" style="position: absolute; /* posição absoluta ao elemento pai, neste caso o BODY */
+        /* Posiciona no meio, tanto em relação a esquerda como ao topo */
+        left: 1%; 
+        top: 149px;
+        text-align: center;
+        width: 500px; /* Largura da DIV */
+        height: auto; /* Altura da DIV */
+        background-color: rgba(5, 109, 78, 0.404);
+        color: rgb(3, 3, 3);
+        border-bottom-right-radius: 15px;
+        z-index: 5; /* Faz com que fique sobre todos os elementos da página */
+        display: none;
+        clear: both;">
+            <form method="post" action="index.html" style="padding: 4px auto;">
+                <h1 style="text-align:center;">Rotas</h1>
+                    <div>
+                        <label for="txtEnderecoPartida">Partida:</label>
+                        <input type="text" id="txtEnderecoPartida" name="txtEnderecoPartida" />
+                    </div>
+                    <div>
+                    <label for="txtEnderecoChegada">Chegada:</label>
+                    <input type="text" id="txtEnderecoChegada" name="txtEnderecoChegada" />
+                    </div>
+                    <div>
+                    <input type="submit" id="btnEnviar" name="btnEnviar" value="Traçar!" />
+                    </div>
+            </form>
+    </div>
+
+        <div id="buscar" class="formulario" ></div>
+        <div id="baixar" class="formulario" ></div>
+
+
+
+</div>
+
+
+		
+		<script src="js/jquery.min.js"></script>
+ 
+        <!-- Maps API Javascript -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1gsE8x0aRRjZup_L3y11L4hRo1-TDym0&callback=initMap"></script>
+        
+        <!-- Caixa de informação -->
+        <script src="js/infobox.js"></script>
+		
+        <!-- Agrupamento dos marcadores -->
+		<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+ 
+        <!-- Arquivo de inicialização do mapa -->
+        <script src="js/mapa.js"></script>
+
+        <!-- Arquivo de inicialização do mapa Das Rotas -->
+        <script src="js/maparotas.js"></script>
+        
+        <!-- Arquivo do selectbox -->
+        <script src="js/select.js"></script>
+        
+        <!-- Arquivo do Autocomplete -->
+        <script src="js/jquery-ui.custom.min.js"></script>
+
+        <!-- Arquivo do Autocomplete Partida -->
+        <script src="js/mapaAutoCompletePartida.js"></script>
+
+        <!-- Arquivo do Autocomplete Chegada -->
+        <script src="js/mapaAutoCompleteChegada.js"></script>
+
+    </body>
+</html>

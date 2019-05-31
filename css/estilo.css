@@ -1,0 +1,244 @@
+.infoBox { 
+  background-color: #FFF; 
+  width: 390px; 
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 14px; 
+  border: 2px solid #3fa7d8; 
+  border-radius: 3px; 
+  margin-top: 10px;
+  height: 250px;
+}
+.infoBox p { 
+  padding: 0 15px 
+}
+.infoBox:before { 
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+  border-bottom: 10px solid #3fa7d8; 
+  top: -10px; 
+  content: ""; 
+  height: 0; 
+  position: absolute; 
+  width: 0; 
+  left: 138px 
+}
+
+h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  padding: 10px;
+  background-color: #48b5e9;
+  color: white;
+  margin: 1px;
+  border-radius: 4px 4px 0 0; /* De acordo com o arredondamento dos cantos da infowindow por padrão. */
+}
+
+  label { 
+    background: #333; 
+    border-radius: 6px 0 0 6px; 
+    color: #f0f0f0; 
+    cursor: pointer; 
+    display: block; 
+    height: 20px; 
+    float: left; 
+    font: 15px 'Open Sans',Arial;
+    padding: 7px 13px;
+    margin: 8px;
+    width: 70px;
+  }
+  
+  input[type="text"] { 
+    background: #FFF;
+    color: #666;
+    display: block;
+    float: left;
+    font: 15px 'Open Sans',Arial; 
+    height: 16px;
+    padding: 9px;
+    margin: 8px;
+    width: 300px; 
+  }
+
+  input[type="submit"] { 
+      background: #2679A5; 
+      border-radius: 0 6px 6px 0;
+      color: #FFF;
+      cursor: pointer;
+      height: 34px;
+      font: 15px 'Open Sans',Arial;
+      padding: 2px 13px 6px;
+      margin: 5px;
+      width: 150px;
+  
+      -webkit-transition: background .2s ease-in;
+      -moz-transition: background .2s ease-in;
+      -ms-transition: background .2s ease-in;
+      -o-transition: background .2s ease-in;
+      transition: background .2s ease-in
+  }
+  
+  .div-select {
+    width:250px;  /* Tamanho final do select */
+    overflow:hidden; /* Esconde o conteúdo que passar do tamanho especificado */
+}
+  
+.div-select select {
+      background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-select.gif) no-repeat #354880;  /* Imagem de fundo (Seta) */
+      background-position: 450px center;  /*Posição da imagem do background*/
+      width: 100%; /* Tamanho do select, maior que o tamanho da div "div-select" */
+      height:48px; /* altura do select, importante para que tenha a mesma altura em todo os navegadores */
+      font-family:Arial, Helvetica, sans-serif; /* Fonte do Select */
+      font-size:18px; /* Tamanho da Fonte */
+      padding:13px 20px 13px 12px; /* Configurações de padding para posicionar o texto no campo */
+      color:#fff; /* Cor da Fonte */
+      text-indent: 1px; /* Remove seta padrão do FireFox */
+      text-overflow: "";  /* Remove seta padrão do FireFox */  
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      -webkit-appearance: none;
+      -moz-appearance: none;}
+      select::-ms-expand {display: none;} /* Remove seta padrão do IE*/
+
+/* =============== Estilos do autocomplete =============== */
+.ui-autocomplete { 
+	background: #fff; 
+	border-top: 1px solid #ccc;
+	cursor: pointer; 
+	font: 15px 'Open Sans',Arial;
+	margin-left: 3px;
+	width: 493px !important;
+	position: fixed;
+}
+
+.ui-autocomplete .ui-menu-item { 
+	list-style: none outside none;
+	padding: 7px 0 9px 10px;
+}
+
+.ui-autocomplete .ui-menu-item:hover { background: #eee }
+
+.ui-autocomplete .ui-corner-all { 
+	color: #666 !important;
+	display: block;
+}
+
+
+/* Inicia Estilos dos Tabs */
+
+
+.tabbed {
+  width: 100%;
+}
+
+.tabbed > input {
+  display: none;
+}
+
+.tabbed > label {
+  display: block;
+  float: left;
+  margin-right: 1px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.tabbed > label:hover,
+.tabbed > input:checked + label {
+  background: #4EC6DE;
+}
+
+.tabs {
+  clear: both;
+  perspective: 600px;
+}
+
+.tabs > div {
+  width: 100%;
+  position: absolute;
+  border: 1px solid #4EC6DE;
+  line-height: 1.4em;
+  opacity: 0;
+  transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0;
+}
+
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4){
+  transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .tabbed { width: 400px }
+  .tabbed > label { display: none }
+  .tabs > div {
+    width: 400px;
+    border: none;
+    padding: 0;
+    opacity: 1;
+    position: relative;
+    transform: none;
+    margin-bottom: 60px;
+  }
+  .tabs > div h2 {
+    border-bottom: 1px solid #4EC6DE;
+    padding-bottom: .5em;
+  }
+}
+
+
+/* Estilos Tabela */
+
+table.blueTable {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.blueTable tbody td {
+  font-size: 13px;
+}
+table.blueTable tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.blueTable thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.blueTable thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+table.blueTable tfoot td {
+  font-size: 14px;
+}
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
